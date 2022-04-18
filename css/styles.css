@@ -133,6 +133,8 @@ img {
 }
 
 .nav-link {
+    position: relative;
+
     color: var(--headline-color);
 
     display: inline-block;
@@ -158,6 +160,25 @@ img {
 .info:hover,
 .info:focus {
     color: var(--accent-color);
+}
+
+.nav-link::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+
+    opacity: 0;
+    background-color: var(--accent-color);
+}
+
+.nav-link.current-page::after {
+    opacity: 1;
 }
 
 .auth-link {
